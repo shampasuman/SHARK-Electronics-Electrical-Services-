@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHARK Electronics & Electrical Services</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            color: #333;
+            max-width: 420px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+        h1 {
+            color: #1e3c72;
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: block;
+            padding: 16px;
+            margin: 15px 0;
+            text-decoration: none;
+            color: white;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn:active { transform: scale(0.96); }
+        
+        .btn-app { background: linear-gradient(to right, #28a745, #218838); box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); }
+        .btn-web { background: linear-gradient(to right, #007bff, #0056b3); box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); }
+        .btn-share { 
+            background: linear-gradient(to right, #f39c12, #d35400); 
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .reward-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 2px dashed #e67e22;
+            border-radius: 15px;
+            color: #856404;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>SHARK Electronics</h1>
+    <p class="subtitle">& Electrical Services (Kalagachia)</p>
+
+    <a href="https://drive.google.com/file/d/1xENF4EF0ovgTjQ1HNiSQumhkHc_yIXJm/view?usp=drivesdk" class="btn btn-app" target="_blank">📥 Download Our App</a>
+    
+    <a href="https://www.smartbiz.in/SHARKELECTRONICS" class="btn btn-web" target="_blank">🌐 Visit Our Website</a>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+    <button onclick="shareNow()" class="btn btn-share">🚀 Refer & Share with Friends</button>
+
+    <div class="reward-box">
+        🎁 Share with 10 friends and <br>claim your CASH REWARDS!
+    </div>
+
+    <p class="footer">© 2026 SHARK Electronics. All rights reserved.</p>
+</div>
+
+<script>
+    function shareNow() {
+        const appLink = "https://drive.google.com/file/d/1xENF4EF0ovgTjQ1HNiSQumhkHc_yIXJm/view?usp=drivesdk";
+        const webLink = "https://www.smartbiz.in/SHARKELECTRONICS";
+        
+        const shareText = `🔥 *SHARK Electronics & Electrical Services* 🔥\n\nBhai, ekhane sosta-y electronics item paoa jay r electrical services o book kora jay!\n\n✅ *Download App:* ${appLink}\n🌐 *Visit Website:* ${webLink}\n\n🎁 *Share korle Cash Reward o achhe!*`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'SHARK Electronics',
+                text: shareText
+            })
+            .then(() => console.log('Successfully shared'))
+            .catch((error) => console.log('Error sharing:', error));
+        } else {
+            // Backup for Desktop
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = shareText;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            alert("Share message copied to clipboard! Ebar paste kore share koro.");
+        }
+    }
+</script>
+
+</body>
+</html>
